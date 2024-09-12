@@ -17,11 +17,11 @@ def allowed_file(filename):
 @app.route('/search', methods=['POST'])
 def search():
     if 'image' not in request.json:
-        return 'whoops'
+        return {'msg':'whoops'}
     
     if 'image' in request.json:
         print('here?')
-        return request.json['image']
+        return {'msg':'hi'}
 
 @app.route('/test', methods=['GET'])
 def test():
