@@ -20,6 +20,7 @@ def search():
         return 'whoops'
     
     if 'image' in request.json:
+        print('here?')
         return request.json['image']
 
 @app.route('/test', methods=['GET'])
