@@ -1,5 +1,5 @@
 from flask import Flask, request
-from deep import match
+#from deep import match
 import os
 
 app = Flask(__name__)
@@ -28,3 +28,6 @@ def search():
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
         file.save(filepath)
         match(filepath)
+
+if __name__ == '__main__':
+    app.run(debug=True)
