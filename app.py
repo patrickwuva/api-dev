@@ -27,6 +27,7 @@ def search():
     if file and allowed_file(file.filename):
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
         file.save(filepath)
+        return 'hello'
         match(filepath)
 
 @app.route('/test', methods=['GET'])
