@@ -29,5 +29,8 @@ def search():
         file.save(filepath)
         match(filepath)
 
+@app.route('/test', methods=['GET'])
+def test():
+    return 'hello'
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=80)
