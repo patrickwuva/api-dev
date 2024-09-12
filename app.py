@@ -16,19 +16,11 @@ def allowed_file(filename):
 
 @app.route('/search', methods=['POST'])
 def search():
-    if 'file' not in request.files:
-        return 'whoops no file'
+    if 'image' not in request.json:
+        return 'whoops'
     
-    file = request.files['file']
-
-    if file.filename == '':
-        return 'no file'
-    
-    if file and allowed_file(file.filename):
-        filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
-        file.save(filepath)
-        return 'hello'
-        match(filepath)
+    if 'image' in request.json:
+        return request.json['image']
 
 @app.route('/test', methods=['GET'])
 def test():
